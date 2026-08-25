@@ -1,0 +1,198 @@
+body{
+    background-color: rgb(20, 20, 20);
+}
+
+#EZ-MODZ{
+    color: blue;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#top-links{
+    display: flex;
+    justify-content:space-evenly ;
+    width: 45%;
+}
+
+#top-links a{
+ position: relative;
+ color: blue;
+}
+
+#top-links a::after{
+       content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: rgb(255, 0, 0);
+            transition: width 0.5s ease;   
+                   
+}
+
+#top-links a:hover::after{
+    width: 100%;
+}
+
+#top-links li{
+    list-style: none;
+}
+
+#top-links a{
+    text-decoration: none;
+    font-size: 145%;
+}
+
+#GTA-btn{
+    background: radial-gradient(circle at top left,cyan,red );
+    border: none;
+    padding: 10%;
+    width: 100px;
+    border-radius: 40px;
+    transition: 0.3s;
+    
+}
+
+#GTA-btn:hover{
+    box-shadow: 5px 5px 5px red;
+}
+
+#games-catalog{
+    width: 100%;
+    text-align: center;
+    background:rgb(3, 3, 44);
+    border-radius: 0px;
+    color: white;
+}
+
+#search{
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px;
+    background: #fcfcfc;
+    color: purple;
+    transition: 0.3s;
+}
+
+#search:hover{
+    box-shadow: 5px 5px 5px red;
+}
+
+#Popular{
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+#black-div{
+    background:rgb(3, 3, 44);
+    padding: 1%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.images{
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.images:hover{
+    opacity: 40%;
+}
+
+.game-card{
+    text-align: center;
+    color: black;
+    width: 15%;
+    background-color: white;
+    border-radius: 10px;
+    padding:1%;
+    transition: 0.3s;
+    box-shadow: 5px 5px 5px 5px black;
+}
+
+.game-card a{
+    text-decoration: none;
+    color: black;
+}
+
+.game-card:hover{
+    background-color: cyan;
+    box-shadow: 5px 5px 5px 5px red;
+}
+
+.get-card{
+    text-align: center;
+    color: white;
+    background:rgb(3, 3, 44);
+    
+    }
+
+.button{
+    padding: 5%;
+    background-color: rgb(20, 20, 20);
+    border-radius: 20px;
+    color: BLUE;
+}
+
+.game-image{
+    width: 300px;
+    border-radius: 20px;
+}
+
+.download-btn{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.download-btn:hover{
+    box-shadow: 5px 5px 5px rgb(253, 228, 0);
+}
+
+.download-btn:active{
+    background-color: blue;
+}
+
+#last-div{
+    display: flex;
+    justify-content: space-around;
+   background:rgb(3, 3, 44);
+}
+
+#last-div a{
+    text-decoration: none;
+    color: white;
+}
+
+#last-div{
+    color: white;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    background:rgb(3, 3, 44);
+    color: white;
+}
+
+#sb-div{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
