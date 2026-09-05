@@ -2,6 +2,14 @@ body{
     background-color: rgb(20, 20, 20);
 }
 
+#logo-div{
+    width: 0px;
+}
+
+#logo{
+    width: 100px;
+}
+
 #EZ-MODZ{
     color: blue;
 }
