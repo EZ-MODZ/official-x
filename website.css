@@ -96,6 +96,15 @@ nav{
     width: 100%;
     text-align: center;
     color: white;
+}
+
+
+#Popular h1{
+    transition: 0.6s;
+    cursor: pointer;
+
+}
+#Popular:hover{
     text-decoration: underline;
 }
 
@@ -400,38 +409,58 @@ footer{
 }
 
 
-/* Mobile & tablet */
-@media (max-width: 768px) {
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+/* =========================
+   EZ-MODZ RESPONSIVE BRAND
+   ========================= */
 
-    #logo-div {
-        order: 1;
+#brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+/* Keep desktop/laptop exactly normal */
+@media (min-width: 769px) {
+    #brand {
+        flex-direction: row;
     }
 
     #logo {
-        width: 90px;
-        height: 90px;
+        display: none;
+    }
+}
+
+
+/* =========================
+   PHONE + TABLET
+   ========================= */
+
+@media (max-width: 768px) {
+
+    #brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    #logo {
+        display: block;
+        width: 85px;
+        height: 85px;
         object-fit: contain;
     }
 
-    nav > div:nth-child(2) {
-        order: 2;
-    }
-
     #EZ-MODZ {
-        margin-top: 5px;
-        margin-bottom: 15px;
+        margin: 0;
+        text-align: center;
     }
 
-    #top-links {
-        order: 3;
-    }
-
-    #login {
-        order: 4;
-    }
 }
