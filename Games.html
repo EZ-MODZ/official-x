@@ -4,13 +4,15 @@
     <link rel="stylesheet" href="website.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Download Mini Militia Apk</title>
 </head>
+
 <body>
+    
 
     <nav>
-        <div>
-            <img src="EZ-MODZ LOGO.png" alt="">
+        <div id="brand">
+            <img id="logo" src="EZ-MODZ LOGO.png" alt="">
             <h1 id="EZ-MODZ"><em>EZ-MODZ</em></h1>
         </div>
 
@@ -31,12 +33,198 @@
 <div id="sb-div">
     <input type="text" placeholder="Search All Apps/games" id="search">
     </div>
-    
-         <div class="game-card">
-        <a href="">
+
+    <div id="categories">
+    <button class="category active" data-category="all">ALL</button>
+    <button class="category" data-category="action">ACTION</button>
+    <button class="category" data-category="simulation">SIMULATION</button>
+    <button class="category" data-category="shooting">SHOOTING</button>
+    <button class="category" data-category="racing">RACING</button>
+    <button class="category" data-category="sports">SPORTS</button>
+    <button class="category" data-category="adventure">ADVENTURE</button>
+</div>
+
+    <div id="black-div">
+<div class="game-card" data-category="shooting">        <a href="mini militia.html">
             <img class="images" src="mini militia icon.avif" alt="">
-            <h3>Mini Militia Classic <br><h4>Version</h4>
+            <h3>Mini Militia Classic</h3>  <p>Mini Militia is a fast-paced multiplayer shooting game where players battle each other using different weapons, maps, and power-ups. It’s known for its fun combat, simple controls, and exciting multiplayer matches.
+</p>
     </a>
         </div>
+
+        <div class="game-card" data-category="racing">        <a href="bb-racing.html">
+            <img class="images" src="images (5).jpeg" alt="">
+            <h3>Beach Buggy Racing</h3>
+            <p>A fun cart racing game <br> with exciting power-ups.</p>
+    </a>
+
+        </div>
+
+<div class="game-card" data-category="adventure">        <a href="smp.html">
+            <img class="images" src="stick-man-party-image.jfif" alt="">
+            <h3>Stick Man Party</h3>  <p>Stickman Party is a fun multiplayer game featuring exciting mini-games, simple controls, and fast-paced challenges you can enjoy with friends.
+</p>
+    </a>
+        </div>
+   
+<div class="game-card" data-category="racing">        <a href="smp.html">
+        <a href="blur.html">
+            <img class="images" src="blur icon.jfif" alt="">
+            <h3>Blur</h3>
+            
+</p>
+    </a>
+
+        </div>
+   
+         <div class="game-card">
+        <a href="AE.html">
+            <img class="images" src="images.png" alt="">
+            <h3>Adobe After Effects CC 2018</h3>
+            <p>Adobe After Effects (AE) is a professional video editing and motion graphics software used to create stunning visual effects, animations, transitions, and cinematic edits.
+</p>
+    </a>
+
+        </div>
+   
+         <div class="game-card">
+        <a href="bb-racing.html">
+            <img class="images" src="capcut.png" alt="">
+            <h3>Capcut</h3>
+            <p>CapCut is a user-friendly video editing app packed with creative tools, effects, transitions, filters, and animations for making smooth and engaging videos.
+</p>
+    </a>
+
+        </div>
+
+        </div>
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchBar = document.getElementById("search");
+    const gameCards = document.querySelectorAll(".game-card");
+    const categoryButtons = document.querySelectorAll(".category");
+    const blackDiv = document.getElementById("black-div");
+
+    let selectedCategory = "all";
+
+    // Nothing found message
+    const nothingFound = document.createElement("div");
+    nothingFound.id = "nothing-found";
+    nothingFound.textContent = "Nothing found 😕";
+    nothingFound.style.display = "none";
+
+    blackDiv.appendChild(nothingFound);
+
+    function filterGames() {
+
+        const searchText = searchBar.value.toLowerCase().trim();
+        let found = false;
+
+        gameCards.forEach(function (card) {
+
+            const gameText = card.innerText.toLowerCase();
+            const categories = card.dataset.category
+                ? card.dataset.category.toLowerCase().split(" ")
+                : [];
+
+            // Search check
+            const matchesSearch = gameText.includes(searchText);
+
+            // Category check
+            const matchesCategory =
+                selectedCategory === "all" ||
+                categories.includes(selectedCategory);
+
+            if (matchesSearch && matchesCategory) {
+                card.style.display = "";
+                found = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // Nothing found
+        if (!found) {
+            nothingFound.style.display = "block";
+        } else {
+            nothingFound.style.display = "none";
+        }
+    }
+
+    // Category buttons
+    categoryButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            // Remove highlight from all
+            categoryButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            // Highlight clicked category
+            this.classList.add("active");
+
+            // Change selected category
+            selectedCategory = this.dataset.category;
+
+            filterGames();
+        });
+    });
+
+    // Search
+    searchBar.addEventListener("input", filterGames);
+
+});
+</script>
+        
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchBar = document.getElementById("search");
+    const gameCards = document.querySelectorAll(".game-card");
+    const blackDiv = document.getElementById("black-div");
+
+    // Nothing found message
+    const nothingFound = document.createElement("div");
+    nothingFound.textContent = "Nothing found 😕";
+    nothingFound.style.display = "none";
+    nothingFound.style.color = "white";
+    nothingFound.style.textAlign = "center";
+    nothingFound.style.fontSize = "22px";
+    nothingFound.style.padding = "40px";
+
+    blackDiv.appendChild(nothingFound);
+
+    searchBar.addEventListener("input", function () {
+
+        const searchText = searchBar.value.toLowerCase().trim();
+        let found = false;
+
+        gameCards.forEach(function (card) {
+
+            const text = card.innerText.toLowerCase();
+
+            if (text.includes(searchText)) {
+                card.style.display = "";
+                found = true;
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if (searchText !== "" && !found) {
+            nothingFound.style.display = "block";
+        } else {
+            nothingFound.style.display = "none";
+        }
+
+    });
+
+});
+</script>
+
+
 </body>
 </html>

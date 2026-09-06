@@ -137,6 +137,39 @@ nav{
     box-shadow: 5px 5px 5px 5px black;
 }
 
+#categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.category {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.category:hover {
+    border-color: #00aaff;
+    color: #00aaff;
+}
+
+/* SELECTED CATEGORY */
+.category.active {
+    background: #00aaff;
+    color: white;
+    border-color: #00aaff;
+    box-shadow: 0 0 12px #00aaff;
+}
+
+
 .game-card a{
     text-decoration: none;
     color: black;
