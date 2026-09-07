@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+<!DOCTYPE html
 <html lang="en">
 <head>
     <link rel="stylesheet" href="website.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Apps</title>
 </head>
 <body>
 
     <nav>
-        <div>
-            <img src="EZ-MODZ LOGO.png" alt="">
+        <div id="brand">
+            <img id="logo" src="EZ-MODZ LOGO.png" alt="">
             <h1 id="EZ-MODZ"><em>EZ-MODZ</em></h1>
         </div>
 
@@ -29,9 +29,21 @@
     </nav>
     <hr>
 <div id="sb-div">
-    <input type="text" placeholder="Search All Apps/games" id="search">
+    <input type="text" placeholder="Search All Apps" id="search">
     </div>
+        <div id="categories">
+                <button class="category" data-category="all">ALL</button>
+
+    <button class="category active" data-category="texteditor">TEXT EDITOR</button>
+    <button class="category" data-category="simulation">SIMULATION</button>
+    <button class="category" data-category="shooting">SHOOTING</button>
+    <button class="category" data-category="racing">RACING</button>
+    <button class="category" data-category="sandbox">SANDBOX</button>
+    <button class="category" data-category="adventure">ADVENTURE</button>
+</div>
+
     <div id="black-div">
+        
          <div class="game-card">
         <a href="movie box.html">
             <img class="images" src="movie box img.png" alt="">
@@ -48,6 +60,15 @@
     </a>
 
         </div>
+
+                        <div class="game-card" data-category="texteditor"> 
+                  <a href="vsc.html">
+            <img class="images" src="VSC icon.jpg" alt="">
+            <h3>Visual Studio Code (Setup)</h3>  <p>Visual Studio Code is a powerful code editor used to write, edit, and debug websites, apps, and software with support for many programming languages.
+</p>
+    </a>
+        </div>
+
    
          <div class="game-card">
         <a href="bb-racing.html">
@@ -59,5 +80,132 @@
 
         </div>
         </div>
+                <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchBar = document.getElementById("search");
+    const gameCards = document.querySelectorAll(".game-card");
+    const categoryButtons = document.querySelectorAll(".category");
+    const blackDiv = document.getElementById("black-div");
+
+    let selectedCategory = "all";
+
+    // Nothing found message
+    const nothingFound = document.createElement("div");
+    nothingFound.id = "nothing-found";
+    nothingFound.textContent = "Nothing found 😕";
+    nothingFound.style.display = "none";
+
+    blackDiv.appendChild(nothingFound);
+
+    function filterGames() {
+
+        const searchText = searchBar.value.toLowerCase().trim();
+        let found = false;
+
+        gameCards.forEach(function (card) {
+
+            const gameText = card.innerText.toLowerCase();
+            const categories = card.dataset.category
+                ? card.dataset.category.toLowerCase().split(" ")
+                : [];
+
+            // Search check
+            const matchesSearch = gameText.includes(searchText);
+
+            // Category check
+            const matchesCategory =
+                selectedCategory === "all" ||
+                categories.includes(selectedCategory);
+
+            if (matchesSearch && matchesCategory) {
+                card.style.display = "";
+                found = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // Nothing found
+        if (!found) {
+            nothingFound.style.display = "block";
+        } else {
+            nothingFound.style.display = "none";
+        }
+    }
+
+    // Category buttons
+    categoryButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            // Remove highlight from all
+            categoryButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            // Highlight clicked category
+            this.classList.add("active");
+
+            // Change selected category
+            selectedCategory = this.dataset.category;
+
+            filterGames();
+        });
+    });
+
+    // Search
+    searchBar.addEventListener("input", filterGames);
+
+});
+</script>
+        
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchBar = document.getElementById("search");
+    const gameCards = document.querySelectorAll(".game-card");
+    const blackDiv = document.getElementById("black-div");
+
+    // Nothing found message
+    const nothingFound = document.createElement("div");
+    nothingFound.textContent = "Nothing found 😕";
+    nothingFound.style.display = "none";
+    nothingFound.style.color = "white";
+    nothingFound.style.textAlign = "center";
+    nothingFound.style.fontSize = "22px";
+    nothingFound.style.padding = "40px";
+
+    blackDiv.appendChild(nothingFound);
+
+    searchBar.addEventListener("input", function () {
+
+        const searchText = searchBar.value.toLowerCase().trim();
+        let found = false;
+
+        gameCards.forEach(function (card) {
+
+            const text = card.innerText.toLowerCase();
+
+            if (text.includes(searchText)) {
+                card.style.display = "";
+                found = true;
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        if (searchText !== "" && !found) {
+            nothingFound.style.display = "block";
+        } else {
+            nothingFound.style.display = "none";
+        }
+
+    });
+
+});
+</script>
+
 </body>
 </html>
