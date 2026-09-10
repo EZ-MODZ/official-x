@@ -19,7 +19,7 @@
         <div id="top-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="Games.html">Games</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#">Help</a></li>
             <li><a href="Apps.html">Apps</a></li>
         </div>
@@ -86,85 +86,6 @@
 
    
         </div>
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const searchBar = document.getElementById("search");
-    const gameCards = document.querySelectorAll(".game-card");
-    const categoryButtons = document.querySelectorAll(".category");
-    const blackDiv = document.getElementById("black-div");
-
-    let selectedCategory = "all";
-
-    // Nothing found message
-    const nothingFound = document.createElement("div");
-    nothingFound.id = "nothing-found";
-    nothingFound.textContent = "Nothing found 😕";
-    nothingFound.style.display = "none";
-
-    blackDiv.appendChild(nothingFound);
-
-    function filterGames() {
-
-        const searchText = searchBar.value.toLowerCase().trim();
-        let found = false;
-
-        gameCards.forEach(function (card) {
-
-            const gameText = card.innerText.toLowerCase();
-            const categories = card.dataset.category
-                ? card.dataset.category.toLowerCase().split(" ")
-                : [];
-
-            // Search check
-            const matchesSearch = gameText.includes(searchText);
-
-            // Category check
-            const matchesCategory =
-                selectedCategory === "all" ||
-                categories.includes(selectedCategory);
-
-            if (matchesSearch && matchesCategory) {
-                card.style.display = "";
-                found = true;
-            } else {
-                card.style.display = "none";
-            }
-        });
-
-        // Nothing found
-        if (!found) {
-            nothingFound.style.display = "block";
-        } else {
-            nothingFound.style.display = "none";
-        }
-    }
-
-    // Category buttons
-    categoryButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            // Remove highlight from all
-            categoryButtons.forEach(function (btn) {
-                btn.classList.remove("active");
-            });
-
-            // Highlight clicked category
-            this.classList.add("active");
-
-            // Change selected category
-            selectedCategory = this.dataset.category;
-
-            filterGames();
-        });
-    });
-
-    // Search
-    searchBar.addEventListener("input", filterGames);
-
-});
-</script>
         
 <script>
 document.addEventListener("DOMContentLoaded", function () {

@@ -47,6 +47,12 @@ nav{
     width: 100%;
 }
 
+.active.active{
+    color:  #00aaff;
+    border-color: #00aaff;
+}
+
+
 #top-links li{
     list-style: none;
 }
