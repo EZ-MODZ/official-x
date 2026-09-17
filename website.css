@@ -47,11 +47,6 @@ nav{
     width: 100%;
 }
 
-.active.active{
-    color:  #00aaff;
-    border-color: #00aaff;
-}
-
 
 #top-links li{
     list-style: none;
@@ -252,7 +247,34 @@ footer{
     color: white;
 }
 
+/* ABOUT SECTION */
+#install-sec{
+    background-color: white;
+    padding: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px  ;
+}
 
+.step123{
+    text-align: center;
+    align-items: center;
+}
+
+.step123 p{
+    font-size: 20px;
+}
+
+
+.steps{
+    border-radius: 100%;
+    padding: 20px;
+}
+
+.inst-arrow{
+    font-size: 300%;
+}
 /* =========================
    MOBILE RESPONSIVE DESIGN
    ========================= */
@@ -503,3 +525,5 @@ footer{
     }
 
 }
+
+@media (max-width: 500px-;)
